@@ -1,2 +1,2 @@
-# sagawa
-A project for Sagawa Api,
+# Sagawa module
+A project for Sagawa Api.
