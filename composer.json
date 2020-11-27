@@ -1,0 +1,17 @@
+{
+    "name": "sagawa/sagawa",
+    "description": "A package for Sagawa Api",
+    "require": {
+        "php": ">=5.6"
+    },
+    "homepage": "https://oro.com",
+    "license": "MIT",
+    "authors": [
+        {
+             "name": "Loc Nguyen",
+             "email": "nguyen.phan.loc@oro.com",
+             "homepage": "https://oro.com",
+             "role": "Developer"
+        }
+    ],
+}
