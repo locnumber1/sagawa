@@ -1,7 +1,7 @@
 <?php 
-namespace sagawa\sagawa;
+namespace oro\Sagawa;
 
-class sagawa{
+class Sagawa{
     private $UserName;
     private $Password;
     protected $RequestData = array();
