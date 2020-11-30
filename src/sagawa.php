@@ -18,7 +18,9 @@ class Sagawa{
 
         $POSTFIELDS = array(
             'RequestType' => $RequestType,
-            'RequestData' => $this->RequestData
+            'RequestData' => json_encode($this->RequestData),
+            'UserName'    => $this->UserName,
+            'Password'    => $this->Password
         );
 
         curl_setopt_array($curl, array(
@@ -40,7 +42,7 @@ class Sagawa{
         echo $response;
     }
 
-    protected function fee(){
+    public function fee(){
         if(!empty($this->UserName) && !empty($this->Password)){
             $this->fetchapi('DU_KIEN_TINH_GIA');
         }else{
@@ -49,7 +51,7 @@ class Sagawa{
         }
     }
 
-    protected function receive_order(){
+    public function receive_order(){
         if(!empty($this->UserName) && !empty($this->Password)){
             $this->fetchapi('API_NHAN_DON_HANG');
         }else{
@@ -58,7 +60,7 @@ class Sagawa{
         }
     }
 
-    protected function tracking_order(){
+    public function tracking_order(){
         if(!empty($this->UserName) && !empty($this->Password)){
             $this->fetchapi('DOI_TAC_SEARCH_LIST_TRACK_AND_TRACE');
         }else{
