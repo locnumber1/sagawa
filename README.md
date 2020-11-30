@@ -39,9 +39,9 @@ $sagawainfo = $sagawa->receive_order();
 * Tracking order:
 <blockquote>
 $sagawainfo = $sagawa->tracking_order();
-  
+</blockquote>
+
 * Fee order:
 <blockquote>
 $sagawainfo = $sagawa->fee();
-</blockquote>
 </blockquote>
