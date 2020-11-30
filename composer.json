@@ -4,6 +4,7 @@
     "require": {
         "php": ">=5.6"
     },
+    "minimum-stability": "dev",
     "homepage": "https://oro.com",
     "license": "MIT",
     "authors": [
