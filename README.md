@@ -12,14 +12,14 @@ Use composer to install this package:
 composer require sagawa/sagawa
 
 ## 3. How to use this package:
-* If you don't use framework.You need add first:<br/><br/>
+* If you don't use framework.You need add first:
 <blockquote>
 require_once __DIR__ . '/vendor/autoload.php';<br/>
 use oro\Sagawa\Sagawa;<br/>
 $sagawa = new Sagawa($Username,$Password,$RequestData);
 </blockquote>
 
-* If you don't use framework. You just include this and use:<br/><br/>
+* If you don't use framework. You just include this and use:
 <blockquote>
 use oro\Sagawa\Sagawa;<br/>
 $sagawa = new Sagawa($Username,$Password,$RequestData);
