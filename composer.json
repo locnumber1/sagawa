@@ -14,7 +14,7 @@
     "require": {
         "php": ">=5.6"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "oro\\Sagawa\\": "src/"
