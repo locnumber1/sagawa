@@ -14,8 +14,6 @@ class Sagawa{
     }
 
     protected function fetchapi($RequestType){
-        $curl = curl_init();
-
         $POSTFIELDS = array(
             'RequestType' => $RequestType,
             'RequestData' => json_encode($this->RequestData),
@@ -23,24 +21,30 @@ class Sagawa{
             'Password'    => $this->Password
         );
 
-        curl_setopt_array($curl, array(
-          CURLOPT_URL => $this->RequestApi,
-          CURLOPT_RETURNTRANSFER => true,
-          CURLOPT_ENCODING => "",
-          CURLOPT_MAXREDIRS => 10,
-          CURLOPT_TIMEOUT => 0,
-          CURLOPT_FOLLOWLOCATION => true,
-          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-          CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => json_encode($POSTFIELDS),
-          CURLOPT_HTTPHEADER => array("Content-Type: application/json"),
-        ));
+        try {
+            $curl = curl_init();
+            
+            curl_setopt_array($curl, array(
+              CURLOPT_URL => $this->RequestApi,
+              CURLOPT_RETURNTRANSFER => true,
+              CURLOPT_ENCODING => "",
+              CURLOPT_MAXREDIRS => 10,
+              CURLOPT_TIMEOUT => 0,
+              CURLOPT_FOLLOWLOCATION => true,
+              CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+              CURLOPT_CUSTOMREQUEST => "POST",
+              CURLOPT_POSTFIELDS => json_encode($POSTFIELDS),
+              CURLOPT_HTTPHEADER => array("Content-Type: application/json"),
+            ));
 
-        $response = curl_exec($curl);
+            $response = curl_exec($curl);
 
-        curl_close($curl);
+            curl_close($curl);
 
-        return $response;
+            return $response;
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     public function fee(){
