@@ -1,5 +1,5 @@
 <?php 
-namespace oro\Sagawa;
+namespace Oro\Sagawa;
 
 class Sagawa{
     private $UserName;
@@ -7,10 +7,10 @@ class Sagawa{
     protected $RequestData = array();
     protected $RequestApi = 'http://118.70.180.205:9049/H2Service/APIThongTinTuDoiTac';
 
-    function __construct($UserName,$Password,$RequestData){
+    function __construct($UserName,$Password,$RequestData,$Sagawarequest Sagawarequest){
         $this->UserName = $UserName;
         $this->Password = $Password;
-        $this->RequestData = $RequestData;
+        $this->RequestData = $array_data;
     }
 
     protected function fetchapi($RequestType){
@@ -39,12 +39,13 @@ class Sagawa{
         $response = curl_exec($curl);
 
         curl_close($curl);
-        echo $response;
+
+        return $response;
     }
 
     public function fee(){
         if(!empty($this->UserName) && !empty($this->Password)){
-            $this->fetchapi('DU_KIEN_TINH_GIA');
+            return $this->fetchapi('DU_KIEN_TINH_GIA');
         }else{
             echo 'Error connect!';
             die();
@@ -53,7 +54,7 @@ class Sagawa{
 
     public function receive_order(){
         if(!empty($this->UserName) && !empty($this->Password)){
-            $this->fetchapi('API_NHAN_DON_HANG');
+            return $this->fetchapi('API_NHAN_DON_HANG');
         }else{
             echo 'Error connect!';
             die();
@@ -62,7 +63,7 @@ class Sagawa{
 
     public function tracking_order(){
         if(!empty($this->UserName) && !empty($this->Password)){
-            $this->fetchapi('DOI_TAC_SEARCH_LIST_TRACK_AND_TRACE');
+            return $this->fetchapi('DOI_TAC_SEARCH_LIST_TRACK_AND_TRACE');
         }else{
             echo 'Error connect!';
             die();
