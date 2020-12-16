@@ -23,7 +23,6 @@ class Sagawa{
 
         try {
             $curl = curl_init();
-            
             curl_setopt_array($curl, array(
               CURLOPT_URL => $this->RequestApi,
               CURLOPT_RETURNTRANSFER => true,
