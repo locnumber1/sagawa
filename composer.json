@@ -17,7 +17,7 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "oro\\Sagawa\\": "src/"
+            "Oro\\Sagawa\\": "src/"
         }
     }
 }
