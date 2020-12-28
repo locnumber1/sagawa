@@ -5,12 +5,13 @@ class Sagawa {
     private $UserName;
     private $Password;
     protected $RequestData = array();
-    protected $RequestApi = 'http://118.70.180.205:9049/H2Service/APIThongTinTuDoiTac';
+    protected $RequestApi;
 
-    function __construct($UserName,$Password,$RequestData){
+    function __construct($UserName,$Password,$RequestData,$RequestApi){
         $this->UserName = $UserName;
         $this->Password = $Password;
         $this->RequestData = $RequestData;
+        $this->RequestApi = $RequestApi;
     }
 
     protected function fetchapi($RequestType){
